@@ -1,0 +1,97 @@
+:root {
+    --bg-linear: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8ea8ea, #84b5f0, #80c1f2, #87d2f6, #96e2f7, #acf1f8, #c6fffb);
+    --main-color: #d45353;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* background-image: var(--bg-linear); */
+    background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.514)-400%,    
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+header {
+    padding: 20px;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon {
+    opacity: 0;
+}
+.logo {
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+    text-shadow: 2px 2px 0px rgb(122, 122, 122);
+}
+header > nav {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+header > nav > a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+}
+header > nav > a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -4px;
+    left: 50%;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.4s ease-in-out;
+}
+header > nav > a:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+main {
+    flex: 1;
+    display: grid;   
+    grid-template-columns: repeat(2, 1fr);
+}
+.about_me {
+    font-size: clamp(16px, 2.5vw, 32px);;
+    margin-right: 7%;
+    color: white;
+    font-weight: 600;
+    text-shadow: 2px 2px 0px rgb(122, 122, 122);
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    transform-origin: left center; /* Esto lo cambiarás dinámicamente */
+    transform: scaleX(1);
+}
+
+spline-viewer {
+    z-index: 100;
+}
